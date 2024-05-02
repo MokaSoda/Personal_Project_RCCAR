@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="display-6 text-center mb-4">Image details</h1>
+<div class="container text-center">
+    <a href="../viewimage"><img src="{{ imagequery.image_data }}" class="img-fluid" alt="Responsive image"></a>
+    <br>
+    <br>
+    <br>
+    <h5>{{ imagequery.uuid }}</h5>
+    <h5>캡처한 사용자 : {{ imagequery.captured_user }}</h5>
+    <br>
+    <br>
+    <br>
+    <!-- delete image -->
+    <form method="POST" action="../deleteimage">
+        <input type="hidden" name="image_id" value="{{ imagequery.uuid }}">
+        <button type="submit" class="btn btn-danger" onclick="return confirm('이미지 삭제를 원하십니까?')">Delete</button>
+    </form>
+    <button type="submit" class="btn btn-primary m-2" onclick="window.location.href='../viewimage'">Back</button>
+    <br>
+
+</div>
+{% endblock %}

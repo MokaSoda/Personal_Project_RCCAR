@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="display-6 text-center mb-4">Image List</h1>
+
+<section class="pb-4 text-center">
+  <button id="backBtn" class="btn btn-primary" onclick="window.location.href='../'">메인화면</button>
+  <br>
+  <br>
+<div class="container border rounded-5">
+{% for result in images %}
+<div class="row">
+    <div class="col-sm-6 d-flex justify-content-center align-items-center">
+      <h3 class="d-inline text-primary">{{ result.timestamp }}</h3>
+    </div>
+    <div class="col-sm-6">
+      <a href="detailimg/{{ result.uuid }}"><img src="{{ result.image_data }}" alt="capturedimg" width="24%" height="24%" class="img-thumbnail rounded-5"/></a>
+    </div>
+  <div class="col-sm-8">
+  </div>
+  </div>
+  <hr>
+{% endfor %}
+</div>
+</section>
+
+{%with messages = get_flashed_messages()%}
+{%if messages %}
+  <script type="text/javascript">
+    alert("{{messages[-1]}}");
+  </script>
+  {%endif%}
+{%endwith%}
+{% endblock %}

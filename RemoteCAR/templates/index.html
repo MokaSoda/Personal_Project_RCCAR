@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block content %}
+<body class="bg-light">
+<!-- SPEED -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">ROSLIB</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> -->
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class=" col-md-4" id="controls">
+        <label for="robot-speed">
+            <strong>Robot speed</strong>
+        </label>
+        <input type="range" min="15" max="100" class="custom-range" id="robot-speed">
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+<!-- VIDEO -->
+<div class="row my-4">
+    <div class="col d-flex justify-content-around">
+        <div>
+          <img src="" class="p-1 bg-dark" alt="" id="video" />
+          <br>
+          <p class="text-center h3 font-weight-bolder">영상</p>
+        </div>
+        <div class='captured' hidden>
+          <img src="" class="p-1 bg-dark" alt="" id="videosnapshot"/>
+          <br>
+          <p class="text-center h3 font-weight-bolder">캡쳐된 이미지</p>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<!-- JOYSTICK -->
+<div class="row my-4">
+    <div class="col">
+        <div class="d-flex justify-content-center" style="width: 210px; height: 210px;">
+            <div id="joystick"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row my-4">
+    <div class="col">
+        <div class="d-flex justify-content-around">
+            <div id="capture">
+                <button id="capture-button" class="btn btn-primary"">Capture</button>
+            </div>
+            <div id="capture">
+              <button id="list-captured" class="btn btn-primary"">View Captured</button>
+          </div>
+        </div>
+    </div>
+</div>
+
+<!-- INFO -->
+<div class="row my-4" id="texthowto" hidden>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="alert alert-success">
+            <h4 class="alert-heading">원격 조종 RC카</h4>
+            <ul>
+                <li>가상 조이스틱이나 wasd키로 조종 가능합니다.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+{% endblock %}

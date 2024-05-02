@@ -1,0 +1,13 @@
+<footer>
+  {% if session.get('user_id') %}
+    <div class="text-center p-3 h5" style="background-color: rgba(255, 255, 255, 0.2);">
+      <p>Username : {{ session.get('username') }}</p>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(255, 255, 255, 0.2);">
+      <button onclick="window.location.href = '{{ url_for('auth.logout') }}'" type="button" class="btn btn-outline-danger">로그아웃</button>
+    </div>
+  {% endif %}
+    <div class="text-center p-3"">
+      <span class="text-muted">&copy; 2024 KMS Personal Work</span>
+    </div>
+</footer>
